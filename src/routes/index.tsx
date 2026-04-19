@@ -184,7 +184,7 @@ function Home() {
       {/* FOUNDER */}
       <Section>
         <div className="overflow-hidden rounded-3xl border border-border bg-[var(--gradient-ink)]">
-          <div className="grid gap-10 p-10 md:grid-cols-[1.5fr_1fr] md:p-16">
+          <div className="grid gap-10 p-10 md:grid-cols-[1.5fr_1fr] md:p-16 text-slate-950">
             <div className="text-white">
               <p className="font-mono text-xs uppercase tracking-widest text-white/60">
                 Founder

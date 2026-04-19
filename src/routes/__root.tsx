@@ -43,6 +43,13 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Vansoft Services" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Vansoft Services — Ship Bug-Free Software Faster" },
+      { name: "twitter:title", content: "Vansoft Services — Ship Bug-Free Software Faster" },
+      { name: "description", content: "Vansoft QA Solutions offers premium QA services and consulting for SaaS startups and scaling product companies." },
+      { property: "og:description", content: "Vansoft QA Solutions offers premium QA services and consulting for SaaS startups and scaling product companies." },
+      { name: "twitter:description", content: "Vansoft QA Solutions offers premium QA services and consulting for SaaS startups and scaling product companies." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/19d5d539-f958-42ea-9578-1cc5360ed16c/id-preview-09a3807a--10c1677a-f418-4be3-a4ee-45b7cbba7366.lovable.app-1776603473670.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/19d5d539-f958-42ea-9578-1cc5360ed16c/id-preview-09a3807a--10c1677a-f418-4be3-a4ee-45b7cbba7366.lovable.app-1776603473670.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

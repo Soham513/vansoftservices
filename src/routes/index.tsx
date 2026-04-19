@@ -183,35 +183,79 @@ function Home() {
 
       {/* FOUNDER */}
       <Section>
-        <div className="overflow-hidden rounded-3xl border border-border bg-[var(--gradient-ink)] text-background">
+        <div className="overflow-hidden rounded-3xl border border-border bg-[var(--gradient-ink)]">
           <div className="grid gap-10 p-10 md:grid-cols-[1.5fr_1fr] md:p-16">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-widest text-background/60">
+            <div className="text-white">
+              <p className="font-mono text-xs uppercase tracking-widest text-white/60">
                 Founder
               </p>
-              <h2 className="mt-3 font-display text-4xl font-bold tracking-tight md:text-5xl">
+              <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-white md:text-5xl">
                 Dnyanesh Badgujar
               </h2>
-              <p className="mt-2 text-base text-background/70">
+              <p className="mt-2 text-base text-white/70">
                 Senior Principal Engineer · 20+ years in IT
               </p>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-background/80">
-                Two decades architecting reliability into enterprise-grade systems at Symantec,
-                Veritas, and Cohesity. Vansoft brings that same rigor to startups — without the
-                enterprise overhead.
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80">
+                Two decades architecting reliability into enterprise-grade systems. Vansoft brings
+                that same rigor to startups — without the enterprise overhead.
               </p>
+
+              {/* Career timeline */}
+              <div className="mt-8 space-y-4">
+                <p className="font-mono text-xs uppercase tracking-widest text-white/50">
+                  Career
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    {
+                      company: "Cohesity",
+                      role: "Senior Principal Engineer",
+                      focus: "Hyperconverged secondary storage · QA leadership",
+                    },
+                    {
+                      company: "Veritas",
+                      role: "Principal QA Engineer",
+                      focus: "Enterprise data protection at global scale",
+                    },
+                    {
+                      company: "Symantec",
+                      role: "Senior QA Engineer",
+                      focus: "Backup & recovery systems for Fortune 500",
+                    },
+                  ].map((job) => (
+                    <li
+                      key={job.company}
+                      className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4"
+                    >
+                      <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white/10 font-display text-sm font-bold text-white">
+                        {job.company[0]}
+                      </div>
+                      <div>
+                        <div className="flex flex-wrap items-baseline gap-x-2">
+                          <span className="font-display text-base font-semibold text-white">
+                            {job.company}
+                          </span>
+                          <span className="text-xs text-white/60">· {job.role}</span>
+                        </div>
+                        <p className="mt-1 text-xs leading-relaxed text-white/60">{job.focus}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               <div className="mt-8 flex flex-wrap gap-2">
                 {["QA Strategy", "System Reliability", "Performance", "Scale"].map((t) => (
                   <span
                     key={t}
-                    className="rounded-full border border-background/20 bg-background/5 px-3 py-1 text-xs font-medium text-background/80"
+                    className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium text-white/80"
                   >
                     {t}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 self-center">
+            <div className="grid grid-cols-2 gap-4 self-center text-white">
               {[
                 { k: "20+", v: "Years experience" },
                 { k: "3", v: "Enterprise leaders" },
@@ -220,10 +264,10 @@ function Home() {
               ].map((s) => (
                 <div
                   key={s.v}
-                  className="rounded-2xl border border-background/15 bg-background/5 p-5"
+                  className="rounded-2xl border border-white/15 bg-white/5 p-5"
                 >
-                  <div className="font-display text-3xl font-bold">{s.k}</div>
-                  <div className="mt-1 text-xs text-background/60">{s.v}</div>
+                  <div className="font-display text-3xl font-bold text-white">{s.k}</div>
+                  <div className="mt-1 text-xs text-white/60">{s.v}</div>
                 </div>
               ))}
             </div>

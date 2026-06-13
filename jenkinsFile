@@ -1,0 +1,37 @@
+pipeline {
+    agent any;
+    
+        stages{
+            stage("Code"){
+                steps{
+                    echo "Get my code from git"
+                    git url : "https://github.com/Soham513/vansoftservices.git" , branch : "main"
+                }
+            }
+            stage ('Build'){
+                steps{
+                    echo "Creating a docker container"
+                    sh "docker build -t vansoft_image:v1 ."
+                }
+            }
+            stage ('Puch to Docker hub'){
+                steps{
+                    withCredentials([usernamePassword(
+                        credentialsId : "Docker_Hub_Cred",
+                        passwordVariable : "dockerHubPass",
+                        usernameVariable : "dockerHubUser"
+                        )]){
+                            sh "docker login -u ${env.dockerHubUser} -p ${dockerHubPass}"
+                            sh "docker image tag vansoft_image:v1 ${env.dockerHubUser}/vansoft_image:v1"
+                            sh "docker push ${env.dockerHubUser}/vansoft_image:v1"
+                        }
+                }
+                
+            }
+            stage ('Deploy my application'){
+                steps {
+                    echo "Deployed successfully"
+                }
+            }
+        }
+}
